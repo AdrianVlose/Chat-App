@@ -1,0 +1,117 @@
+@use './styles/variables.scss' as *;
+@use './styles/chats.scss' as *;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: $primary-dark-bg-color;
+  width: 100%;
+  height: 10%;
+  top: 0;
+
+  h1 {
+    color: $text-main-color;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+main {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+
+  .sidebar {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $third-dark-bg-color;
+
+    @media (width <= 1150px) {
+      width: 35%;
+    }
+  }
+
+  .chat-content {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: $primary-light-bg-color;
+
+    overflow: hidden;
+
+    .input-section {
+      width: 100%;
+      height: 70px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 3%;
+      padding-bottom: 1rem;
+      background-color: inherit;
+
+      input {
+        height: 80%;
+        width: 50%;
+        border-radius: 8px;
+        color: $second-dark-bg-color;
+        padding-left: 2%;
+        height: 100%;
+        font-size: 1.25rem;
+        border: 1px solid $primary-border-color;
+        background-color: $second-light-bg-color;
+
+        &:disabled {
+          color: $text-disabled-dark-color;
+          background-color: $disabled-bg-light-color;
+          border: 1px solid $text-disabled-dark-color;
+        }
+      }
+
+      button {
+        border-radius: 8px;
+        height: 100%;
+        width: 10%;
+        min-width: 70px;
+        background-color: $primary-dark-bg-color;
+        font-size: 1rem;
+        color: $primary-light-bg-color;
+        border-color: transparent;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $second-dark-bg-color;
+          transform: scale(1.05);
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+          color: $text-disabled-dark-color;
+          background-color: $disabled-bg-light-color;
+          border: 1px solid $text-disabled-dark-color;
+        }
+      }
+    }
+  }
+}

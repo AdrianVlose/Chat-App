@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Chat Application</h1>
+    </header>
+    <main>
+      <aside class="sidebar" id="sidebar">
+        <div class="name-field-box">
+          <input id="name-field" type="text" placeholder="Type your name..."/>
+          <img src="./assets/check.svg" alt="save-icon" class="save-name" id="save-icon"/>
+        </div>
+        <section id="chats" class="chats"></section>
+      </aside>
+      <div class="chat-content">
+        <section class="messages" id="chat">
+            <h4 class="no-display-text" id="no-display-text">
+                Choose a conversation from the list to view messages
+            </h4>
+        </section>
+        <section class="input-section">
+            <input id="message-field" type="text" disabled placeholder="Send a message..."/>
+            <button type="submit" id="send-button" disabled>Send</button>
+        <section>
+      </div>
+    </main>
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>

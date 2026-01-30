@@ -1,0 +1,167 @@
+@use './variables.scss' as *;
+
+.name-field-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+  input {
+    max-height: 35px;
+    width: 80%;
+    border-radius: 8px;
+    color: $text-main-color;
+    padding-left: 2%;
+    height: 100%;
+    font-size: 1rem;
+    border: 1px solid $text-label-color;
+    background-color: $third-dark-bg-color;
+
+    &:disabled {
+      color: $text-disabled-dark-color;
+      background-color: $disabled-bg-dark-color;
+      border: 1px solid $disabled-border-color;
+    }
+  }
+
+  .save-name {
+    padding: 0.25rem;
+    border-radius: 24px;
+    border: 1.25px solid $text-label-color;
+    background-color: $third-dark-bg-color;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.chats {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 100%;
+
+  .user-chat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0px 0.5rem 1rem;
+    gap: 1rem;
+    border-bottom: 1px solid $third-border-color;
+    border-top: 1px solid $third-border-color;
+
+    h2 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0;
+      color: $text-main-color;
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: 0.8rem;
+      margin: 0;
+      color: $text-label-color;
+    }
+
+    &:hover {
+      filter: brightness(1.5);
+    }
+
+    &.unread {
+      background-color: $third-dark-bg-color;
+      filter: brightness(1.8);
+    }
+
+    &.read {
+      background-color: $third-dark-bg-color;
+    }
+
+    &.active {
+      background-color: $active-dark-color;
+    }
+  }
+}
+
+.messages {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  flex-direction: column-reverse;
+
+  flex: 1 1 0px;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  gap: 1rem;
+
+  .message {
+    width: 100%;
+    display: flex;
+    min-height: 70px;
+    justify-content: center;
+
+    .text-wrapper {
+      width: auto;
+      max-width: 500px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.25rem 1rem;
+      border-radius: 8px;
+
+      h2 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      h4 {
+        color: $text-label-color;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      &.right {
+        background-color: $third-light-bg-color;
+
+        h2 {
+          color: $third-light-bg-color;
+          display: none;
+        }
+
+        h4 {
+          text-align: right;
+        }
+      }
+      &.left {
+        background-color: $third-dark-bg-color;
+
+        h2 {
+          color: $text-main-color;
+        }
+      }
+    }
+
+    &.right {
+      justify-content: flex-end;
+    }
+
+    &.left {
+      justify-content: flex-start;
+    }
+  }
+
+  .no-display-text {
+    font-weight: 300;
+    font-size: 2rem;
+    text-align: center;
+    color: $text-label-color;
+  }
+}
